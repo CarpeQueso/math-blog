@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+http://carpequeso.netlify.com/* http://carpequeso.com/:splat 301!
