@@ -1,0 +1,18 @@
+---
+---
+<!-- Maybe rename some of these classes? -->
+<div class="recent-posts">
+  <h2 class="recent-posts-title">Featured</h2>
+  <ul class="post-preview-list">
+    {% for post in site.posts %}
+      {% if post.featured %}
+        <li class="post-preview-list-item">
+	  <a class="post-preview-list-item-title" href="{{ post.url }}">{{ post.title }}</a>
+	  <span class="post-preview-list-item-date">{{ post.date | date: '%B %d, %Y' }}</span>
+	  {{ post.excerpt }}
+	  <a class="post-preview-list-item-link" href="{{ post.url }}">Read more...</a>
+	</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
