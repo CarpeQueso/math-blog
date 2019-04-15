@@ -310,6 +310,18 @@ header {
     }
 }
 
+.page-title {
+    font-size: 32px;
+    
+    @media(min-width: $min-width-tablet) {
+	font-size: 36px;
+    }
+
+    @media(min-width: $min-width-computer) {
+	font-size: 40px;
+    }
+}
+
 .post {
 
     @media(min-width: $min-width-tablet) {
@@ -542,6 +554,17 @@ footer {
     margin: 24px 0;
 
     @media(min-width: $min-width-tablet) {
+    }
+
+    @media(min-width: $min-width-computer) {
+    }
+}
+
+.theorem {
+    margin: 46px 20px;
+    
+    @media(min-width: $min-width-tablet) {
+	margin: 46px 32px;
     }
 
     @media(min-width: $min-width-computer) {

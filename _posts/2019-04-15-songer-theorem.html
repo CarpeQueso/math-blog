@@ -1,0 +1,61 @@
+---
+title: Songer Theorem
+subtitle: A Number Subtracted from its Reversal is Divisible by Nine
+tags:
+  - number theory
+  - quick
+---
+
+<p>
+A friend of mine (whose last name is Songer) recently mentioned an unusual observation at a dinner party&#x2014;if one subtracts a number from its reversal, the result is always divisible by nine. In a textbook example of <a href="https://www.xkcd.com/356/">nerd sniping</a>, I and a couple of other friends whipped out calculators to convince ourselves and spent a few minutes trying to find a proof (as one does at dinner parties). Not all of the guests that night were fond of math, so we set the problem aside when the proof wasn't immediately forthcoming. However, an unresolved sense of mathematical angst propelled me toward a proof the next day, and it has an interesting consequence.
+</p>
+
+<p>
+Now, we define the <i>reversal</i> of a number as the reversal of its digits. For instance, the reversal of 1234 would be 4321. If we define a reversal function \(\text{rev}: \mathbb{Z} \longrightarrow \mathbb{Z}\) that performs this reversal, our theorem is formally stated as follows:
+</p>
+
+<div class="theorem">
+<p>
+For all integers \(x\), there is an integer \(c\) such that \[x - \text{rev($x$)} = 9c.\]
+</p>
+
+</div>
+
+<p>
+There are a few different ways to think about integers. Most helpful to our proof is to think about them as polynomials. For instance, \(271\) is equivalent to \(2 \times 10^2 + 7 \times 10^1 + 1 \times 10^0\). So, for any integer \(a\) with \(n\) digits \(a_1 a_2 a_3 \ldots a_n\), there is an equivalent polynomial \(a_1 \times 10^{n-1} + a_2 \times 10^{n-2} + \cdots + a_n \times 10^0\).
+</p>
+
+<p>
+Let our value of \(x\) in the theorem be an integer with \(n\) digits \(x_1 \ldots x_n\). Then our theorem can be restated as
+</p>
+
+<p>
+\[\begin{align}(&x_1 \times 10^{n-1} + \cdots + x_n \times 10^0) \\ &- (x_n \times 10^{n-1} + \cdots + x_1 \times 10^0) = 9c.\end{align}\]
+</p>
+
+<p>
+We can then pair up every \(x_i\) term in \(x\) with its corresponding term in the reversal. For each term, this gives us something like \[\cdots + (x_i \times 10^{i-1} - x_i \times 10^{n-i}) + \cdots.\]
+</p>
+
+<p>
+This is equivalent to \[\cdots + x_i(10^{i-1} - 10^{n-i}) + \cdots.\]
+</p>
+
+<p>
+If \(i-1\) is equal to \(n-i\), then we're right in the middle of both numbers and this term is equal to 0. So, let's assume, without loss of generality, that \(i-1\) is greater than \(n-i\). Then we can factor an extra \(10^{n-i}\) out of both of the powers of 10 to get \[\cdots + x_i[10^{n-i}(10^{i-1-(n-i)} - 1)] + \cdots.\]
+</p>
+
+<p>
+Notice what this does for us. This term now has a factor which is a nonzero power of 10 minus 1 which will always give us an integer divisible by 9 (9, 99, 999, etc.). Since every digit of \(x\) has a corresponding digit in the reversal, every one of these paired terms in the polynomial must be divisible by 9.
+</p>
+
+<p>
+What's more, we see that 9 isn't particularly special. It just happens to be the value that's one less than the base we're working in. We could just as easily use any other base as a substitute for 10. So, for a base \(b\), a number minus its reversal is divisible by \(b-1\). This gives us a more abstract formulation. 
+</p>
+
+<div class="theorem">
+<p>
+For all integers \(x\) in base \(b\), there is an integer \(c\) such that \[x - \text{rev($x$)} = (b-1)c.\]
+</p>
+
+</div>
