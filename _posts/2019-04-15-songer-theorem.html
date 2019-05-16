@@ -7,7 +7,7 @@ tags:
 ---
 
 <p>
-A friend of mine (whose last name is Songer) recently mentioned an unusual observation at a dinner party&#x2014;if one subtracts a number from its reversal, the result is always divisible by nine. In a textbook example of <a href="https://www.xkcd.com/356/">nerd sniping</a>, I and a couple of other friends whipped out calculators to convince ourselves and spent a few minutes trying to find a proof (as one does at dinner parties). Not all of the guests that night were fond of math, so we set the problem aside when the proof wasn't immediately forthcoming. However, an unresolved sense of mathematical angst propelled me toward a proof the next day, and it has an interesting consequence.
+A friend of mine (whose last name is Songer) recently mentioned an unusual observation at a dinner party&#x2014;if one subtracts a number from its reversal, the result is always divisible by nine. In a textbook example of <a href="https://www.xkcd.com/356/">nerd sniping</a>, a couple of other friends and I whipped out calculators to convince ourselves and spent a few minutes trying to find a proof (as one does at dinner parties). Not all of the guests that night were fond of math, so we set the problem aside when the proof wasn't immediately forthcoming. However, an unresolved sense of mathematical angst propelled me toward a proof the next day, and it has an interesting consequence.
 </p>
 
 <p>
@@ -16,7 +16,7 @@ Now, we define the <i>reversal</i> of a number as the reversal of its digits. Fo
 
 <div class="theorem">
 <p>
-For all integers \(x\), there is an integer \(c\) such that \[x - \text{rev($x$)} = 9c.\]
+For every integer \(x\), there is an integer \(c\) such that \[x - \text{rev($x$)} = 9c.\]
 </p>
 
 </div>
@@ -50,12 +50,12 @@ This term now has a factor that is a nonzero power of 10 minus 1 which will alwa
 </p>
 
 <p>
-What's more, we see that 9 isn't particularly special. It just happens to be the value that's one less than the base we're working in. We could just as easily use any other base as a substitute for 10. So, for a base \(b\), a number minus its reversal is divisible by \(b-1\). This gives us a more abstract formulation. 
+What's more, we see that 9 isn't particularly special. It just happens to be the value that's one less than the base we're working in. We could just as easily use any other base as a substitute for 10. So, for a base \(b\), a number minus its reversal is divisible by \(b-1\). This gives us a more abstract formulation:
 </p>
 
 <div class="theorem">
 <p>
-For all integers \(x\) in base \(b\), there is an integer \(c\) such that \[x - \text{rev($x$)} = (b-1)c.\]
+For every integer \(x\) in base \(b\), there is an integer \(c\) such that \[x - \text{rev($x$)} = (b-1)c.\]
 </p>
 
 </div>
